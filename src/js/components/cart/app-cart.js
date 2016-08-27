@@ -3,21 +3,15 @@ import AppStore from '../../stores/app-store';
 import AppCartItem from './app-cart-item';
 import StoreWatchMixin from '../../mixins/StoreWatchMixin';
 import { Link } from 'react-router';
-
 const cartItems = () => {
 	return {items: AppStore.getCart()}
 };
-
 const Cart = (props) => {
-
 	var total = 0;
 	var items = props.items.map((item, i) => {
-
 		let subtotal = item.cost * item.qty;
 		total += subtotal;
-
 		return(
-
 			<AppCartItem 
 				subtotal={subtotal}
 				key={i}
@@ -25,8 +19,6 @@ const Cart = (props) => {
 			/>
 		)
 	});
-
-
 	return (
 		<div>
 			<h1>Cart</h1>
@@ -50,12 +42,8 @@ const Cart = (props) => {
 					</tr>
 				</tfoot>
 			</table>
-
 			<Link to ="/">Continue Shopping</Link>
 		</div>
-
 	)
-
 };
-
 export default StoreWatchMixin(Cart, cartItems);

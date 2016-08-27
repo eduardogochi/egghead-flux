@@ -4,7 +4,6 @@ import Cart from './cart/app-cart';
 import CatalogDetail from './product/app-catalogdetail';
 import Template from './app-template';
 import { Router, Route, IndexRoute, HashHistory as hashHistory } from 'react-router';
-
 export default () => {
 	return (
 		<Router history={hashHistory}>

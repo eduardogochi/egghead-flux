@@ -4,14 +4,11 @@ import StoreWatchMixin from '../../mixins/StoreWatchMixin';
 import AppActions from '../../actions/app-actions';
 import CartButton from '../cart/app-cart-button';
 import { Link } from 'react-router';
-
 function getCatalogItem( props ){
 	let item = AppStore.getCatalog().find( ({ id }) => id === props.params.item )
 	return {item}
 }
-
 const CatalogDetail = ( props ) => {
-
 		return (
 		<div>
 			<h4>{props.item.title}</h4>
@@ -27,7 +24,5 @@ const CatalogDetail = ( props ) => {
 			<CartButton handler={AppActions.addItem.bind(null, props.item)} txt="Add to Cart"/>
 		</div>
 	)
-
 }
-
 export default StoreWatchMixin(CatalogDetail, getCatalogItem);
